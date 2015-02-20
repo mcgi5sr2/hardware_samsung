@@ -278,15 +278,6 @@ static int close_lights(struct light_device_t *dev)
     return 0;
 }
 
-static int close_lights(struct light_device_t *dev)
-{
-    ALOGV("close_light is called");
-    if (dev)
-        free(dev);
-
-    return 0;
-}
-
 static int open_lights(const struct hw_module_t *module, char const *name,
                         struct hw_device_t **device)
 {

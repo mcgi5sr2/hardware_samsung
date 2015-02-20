@@ -28,6 +28,9 @@
 extern "C" {
 #endif
 
+#include <videodev2.h>
+#include "videodev2_samsung.h"
+
 #ifdef __cplusplus
 }
 #endif

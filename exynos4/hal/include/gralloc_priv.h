@@ -46,6 +46,9 @@
 #define HWC_HWOVERLAY 1
 
 #define GRALLOC_ARM_UMP_MODULE 1
+#define debug_level 0
+
+static int gMemfd = 0;
 
 struct private_handle_t;
 
@@ -131,9 +134,6 @@ struct private_handle_t {
     int     bpp;
     int     stride;
 
-    /* Following members are for ION memory only */
-    int     ion_client;
-
     /* Following members ard for YUV information */
 #ifdef USELESS_SEC_YADDR
     /* Samsung Mobile's blobs don't appear to be using yaddr 
@@ -144,6 +144,9 @@ struct private_handle_t {
 #endif
     unsigned int uoffset;
     unsigned int voffset;
+    
+    /* Following members are for ION memory only */
+    int     ion_client;
 
 #ifdef __cplusplus
     static const int sNumInts = 21;

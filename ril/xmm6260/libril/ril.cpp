@@ -3629,7 +3629,7 @@ void RIL_onUnsolicitedResponse(int unsolResponse, void *data,
         RLOGW("RIL_onUnsolicitedResponse called before RIL_register");
         return;
     }
-    
+
     /* Hack to include Samsung responses */
     if (unsolResponse > SAMSUNG_UNSOL_RESPONSE_BASE) {
         unsolResponseIndex = unsolResponse - SAMSUNG_UNSOL_RESPONSE_BASE + MAX_RIL_UNSOL - RIL_UNSOL_RESPONSE_BASE;

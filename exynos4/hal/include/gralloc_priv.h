@@ -135,13 +135,13 @@ struct private_handle_t {
     int     stride;
 
     /* Following members ard for YUV information */
-#ifdef USELESS_SEC_YADDR
+
     /* Samsung Mobile's blobs don't appear to be using yaddr 
      * in their header file, and none of the source uses it
      * anywhere
      */
     unsigned int yaddr;
-#endif
+
     unsigned int uoffset;
     unsigned int voffset;
     

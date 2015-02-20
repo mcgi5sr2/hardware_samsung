@@ -154,7 +154,7 @@ static int fb_post(struct framebuffer_device_t* dev, buffer_handle_t buffer)
                 return 0;
             }
         }
-#else
+
         /*Standard Android way*/
 #ifdef MALI_VSYNC_EVENT_REPORT_ENABLE
         gralloc_mali_vsync_report(MALI_VSYNC_EVENT_BEGIN_WAIT);
@@ -170,7 +170,7 @@ static int fb_post(struct framebuffer_device_t* dev, buffer_handle_t buffer)
 #ifdef MALI_VSYNC_EVENT_REPORT_ENABLE
         gralloc_mali_vsync_report(MALI_VSYNC_EVENT_END_WAIT);
 #endif
-#endif
+
 
         m->currentBuffer = buffer;
 

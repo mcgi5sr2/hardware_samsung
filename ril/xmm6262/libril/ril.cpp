@@ -1506,13 +1506,8 @@ static void dispatchSetInitialAttachApn(Parcel &p, RequestInfo *pRI)
     pf.password = strdupReadString(p);
 
     startRequest;
-<<<<<<< HEAD
-    appendPrintBuf("%sapn=%s, protocol=%s, authtype=%d, username=%s, password=%s",
-            printBuf, pf.apn, pf.protocol, pf.authtype, pf.username, pf.password);
-=======
     appendPrintBuf("%sapn=%s, protocol=%s, auth_type=%d, username=%s, password=%s",
             printBuf, pf.apn, pf.protocol, pf.auth_type, pf.username, pf.password);
->>>>>>> b6bc5b62bda0cd0695a7b7f7e592a43413ed04c6
     closeRequest;
     printRequest(pRI->token, pRI->pCI->requestNumber);
 
@@ -1960,11 +1955,7 @@ static int responseDataCallList(Parcel &p, void *response, size_t responselen)
             writeStringToParcel(p, p_cur[i].ifname);
             writeStringToParcel(p, p_cur[i].addresses);
             writeStringToParcel(p, p_cur[i].dnses);
-<<<<<<< HEAD
             writeStringToParcel(p, p_cur[i].addresses);
-=======
-            writeStringToParcel(p, p_cur[i].gateways);
->>>>>>> b6bc5b62bda0cd0695a7b7f7e592a43413ed04c6
             appendPrintBuf("%s[status=%d,retry=%d,cid=%d,%s,%s,%s,%s,%s,%s],", printBuf,
                 p_cur[i].status,
                 p_cur[i].suggestedRetryTime,
@@ -1974,11 +1965,7 @@ static int responseDataCallList(Parcel &p, void *response, size_t responselen)
                 (char*)p_cur[i].ifname,
                 (char*)p_cur[i].addresses,
                 (char*)p_cur[i].dnses,
-<<<<<<< HEAD
                 (char*)p_cur[i].addresses);
-=======
-                (char*)p_cur[i].gateways);
->>>>>>> b6bc5b62bda0cd0695a7b7f7e592a43413ed04c6
         }
         removeLastChar;
         closeResponse;
@@ -3654,11 +3641,7 @@ void RIL_onUnsolicitedResponse(int unsolResponse, void *data,
         RLOGW("RIL_onUnsolicitedResponse called before RIL_register");
         return;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> b6bc5b62bda0cd0695a7b7f7e592a43413ed04c6
     /* Hack to include Samsung responses */
     if (unsolResponse > SAMSUNG_UNSOL_RESPONSE_BASE) {
         unsolResponseIndex = unsolResponse - SAMSUNG_UNSOL_RESPONSE_BASE + MAX_RIL_UNSOL - RIL_UNSOL_RESPONSE_BASE;
